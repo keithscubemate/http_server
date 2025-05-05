@@ -15,6 +15,8 @@ func main() {
 
     hostString := fmt.Sprintf(":%d", *port);
 
+    fmt.Printf("Hosting at localhost%s\n", hostString);
+
     http.Handle("/", http.FileServer(http.Dir(*directory)))
     http.ListenAndServe(hostString, nil)
 }
